@@ -1,0 +1,50 @@
+.button {
+	&-trans {
+		border: 0.5px solid $coral;
+		padding: 20px;
+		width: 100%;
+		display: block;
+		box-shadow: none;
+		border-radius: 0px;
+		text-align: center;
+		font-family: GrotexBETA;
+		font-size: 14px;
+		line-height: 1.14;
+		letter-spacing: 1px;
+		color: $beige;
+		cursor: pointer;
+		background: transparent;
+		margin-bottom: 20px;
+		overflow: hidden;
+		position: relative;
+		&:after {
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 100%;
+			background-color: $coral;
+			position: absolute;
+			left: 0;
+			transition: all 0.1s ease;
+			z-index: -1;
+		}
+		&:hover {
+			color: $white-three;
+			&:after {
+				top: 0;
+			}
+		}
+	}
+}
+
+// buton alt
+.button-alt {
+	
+}
+
+@if $EXTENDBASE {
+	input[type="submit"],
+	input[type="button"],
+	button { @extend .button; }
+}

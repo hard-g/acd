@@ -1,0 +1,375 @@
+@font-face {
+  font-family: 'GrotexBETA';
+  src: url('./fonts/GrotexBETA-Regular.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'SelfModern';
+  src: url('./fonts/Self_Modern-Regular_web.eot');
+  src: url('./fonts/Self_Modern-Regular_web.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Self_Modern-Regular_web.woff2') format('woff2'),
+    url('./fonts/Self_Modern-Regular_web.woff') format('woff'),
+    url('./fonts/Self_Modern-Regular_web.ttf') format('truetype'),
+    url('./fonts/Self_Modern-Regular_web.svg#Self_Modern-Regular_web') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SelfModern-TextBeta';
+  src: url('./fonts/Self_Modern-Text_Beta_web.eot');
+  src: url('./fonts/Self_Modern-Text_Beta_web.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Self_Modern-Text_Beta_web.woff2') format('woff2'),
+    url('./fonts/Self_Modern-Text_Beta_web.woff') format('woff'),
+    url('./fonts/Self_Modern-Text_Beta_web.ttf') format('truetype'),
+    url('./fonts/Self_Modern-Text_Beta_web.svg#Self_Modern-Text_Beta_web') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SelfModern-Italic';
+  src: url('./fonts/Self_Modern-Italic_web.eot');
+  src: url('./fonts/Self_Modern-Italic_web.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Self_Modern-Italic_web.woff2') format('woff2'),
+    url('./fonts/Self_Modern-Italic_web.woff') format('woff'),
+    url('./fonts/Self_Modern-Italic_web.ttf') format('truetype'),
+    url('./fonts/Self_Modern-Italic_web.svg#Self_Modern-Italic_web') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RumoriS-Chiari';
+  src: url('./fonts/RumoriS-Chiari.eot');
+  src: url('./fonts/RumoriS-Chiari.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/RumoriS-Chiari.woff2') format('woff2'),
+    url('./fonts/RumoriS-Chiari.woff') format('woff'),
+    url('./fonts/RumoriS-Chiari.ttf') format('truetype'),
+    url('./fonts/RumoriS-Chiari.svg#RumoriS-Chiari') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+em {
+  font-family: "SelfModern-Italic";
+}
+
+.header-page-title {
+   font-family: RumoriS-Chiari;
+  font-size: 2.3rem;
+  letter-spacing: 1.3px;
+  text-align: left;
+  color: $light-peach;
+      max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.logo {
+  font-family: RumoriS-Chiari;
+  font-size: 2.3rem;
+  letter-spacing: 1.3px;
+  text-align: left;
+  color: $logo-purple;
+  display: block;
+  margin-right: 18px;
+
+}
+.t-align-center {
+	text-align: center;
+	width: 100%;
+}
+.t-align-left {
+	text-align: left;
+}
+
+
+.page-title {
+  font-family: SelfModern;
+  font-size: 4.0rem;
+  line-height: 1.1;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: #62060a;
+  text-transform: uppercase;
+}
+
+.document-description {
+  font-family: SelfModern !important;
+}
+
+.essay-header {
+  font-family: SelfModern;
+  font-size: 3.0rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #62060a;
+}
+
+.pull-quote {
+  font-family: SelfModern-Italic;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #62060a;
+  display: block;
+  position: relative;
+  width: 130%;
+  left: -15%;
+  @include tablet() {
+    width: 100%;
+    left: 0;
+  }
+}
+
+
+.item-title {
+  font-family: SelfModern;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  text-align: center;
+  color: #62060a;
+}
+
+.list {
+  font-family: GrotexBETA;
+  font-size: 1.9rem;
+  line-height: 1.37;
+  text-align: left;
+  color: #62060a;
+}
+
+.essay-header-inline {
+  font-family: GrotexBETA;
+  font-size: 1.9rem;
+  line-height: 1.26;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #62060a;
+}
+
+.document-item-title {
+  font-family: GrotexBETA;
+  font-size: 1.9rem;
+  line-height: 1.16;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #62060a;
+}
+
+.quote {
+  font-family: SelfModern-Italic;
+  font-size: 1.9rem;
+  line-height: 1.37;
+  text-align: left;
+  color: #62060a;
+}
+
+.subhead-italic {
+  font-family: SelfModern;
+  font-size: 1.9rem;
+  font-style: italic;
+  line-height: 1.37;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #62060a;
+}
+
+.subhead, .subhead * {
+   font-family: SelfModern;
+  font-size: 19px;
+  line-height: 1.37;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $claret;
+}
+
+
+body {
+  font-family: SelfModern-TextBeta;
+  font-size: 1.9rem;
+  line-height: 1.37;
+  text-align: left;
+  color: #62060a;
+}
+
+.search-text {
+  font-family: GrotexBETA;
+  font-size: 1.8rem;
+  line-height: 1.11;
+  letter-spacing: 0.9px;
+  text-align: center;
+  color: $white;
+}
+
+.sub-menu .menu-item, .sub-menu .menu-item a {
+  font-family: GrotexBETA;
+  font-size: 1.8rem;
+  line-height: 1.11;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: $beige;
+}
+
+.menu-item, .menu-item a {
+  font-family: GrotexBETA;
+  font-size: 1.8rem;
+  line-height: 1.11;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: $white;
+}
+
+.lightbox-caption {
+  font-family: GrotexBETA;
+  font-size: 1.6rem;
+  line-height: 1.19;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: $white;
+}
+
+.lightbox-item-title {
+  font-family: GrotexBETA;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: 0.6px;
+  text-align: left;
+  text-decoration: underline;
+  color: $white;
+}
+
+
+.image-caption-title {
+  font-family: GrotexBETA;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.7px;
+  display: block;
+  margin: 20px auto 10px;
+  text-align: center;
+  color: $claret;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.image-caption {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #62060a;
+}
+
+.page-header-wrapper p:last-child {
+  margin-bottom: 0px !important;
+}
+
+.image-caption-ctr, .image-caption-ctr p, p .image-caption-ctr {
+  font-family: GrotexBETA;
+  font-size: 1.4rem !important;
+  line-height: 1.29 !important;
+  letter-spacing: 0.5px !important;
+  text-align: center;
+  color: #62060a;
+}
+.filter-box-text {
+ font-family: GrotexBETA;
+  font-size: 1.6rem;
+  line-height: 1.19;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: $claret;
+  }
+  .filter-trigger {
+      font-family: GrotexBETA;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: $coral;
+  }
+
+.subhead-small {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #62060a;
+}
+
+.button-text {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 2px;
+  text-align: center;
+  color: $coral;
+}
+
+.menu-label {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 1px;
+  text-align: right;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: $light-peach;
+}
+
+.footnote-number {
+  font-family: GrotexBETA;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: $coral;
+}
+
+.doc-meta-label {
+   width: 226px;
+  height: 18px;
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 0.8px;
+  text-align: left;
+  color: #9b9b9b;
+}
+
+.document-counter, .document-counter-grey {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 4px;
+  text-align: center;
+  color: $white;
+  display: block;
+  margin-top: 23px;
+  &-grey {
+     color:  $purple-grey;
+  }
+}
+
+.citation {
+  font-family: GrotexBETA;
+  font-size: 1.0rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #62060a;
+}
+.lightbox-controls, .lightbox-controls a {
+   font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: $light-peach;
+}

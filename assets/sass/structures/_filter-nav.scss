@@ -1,0 +1,184 @@
+.filter-nav {
+	top: initial;
+	position: absolute;
+	&.fixed-yo {
+		top: 46px;
+		right: 0;
+		height: calc(100vh - 46px);
+		position: fixed;
+	}
+	@include phone() {
+		height: auto;
+	}
+}
+.filter-trigger {
+	transition: background-color 0.2s ease;
+	background-color: transparent;
+	&.fixed-yo {
+		background-color: $coral;
+    	bottom: initial !important;
+    	padding: 1rem;
+    	right: 11px !important;
+    	position: relative;
+		&.stuck {
+			position: fixed !important;
+			top: 6px;
+		}
+	}
+}
+
+    
+.filters {
+	&.top {
+		z-index: 1;
+		.filter-container-bar {
+			visibility: hidden;
+		}
+	}
+}
+
+.filter-container-bar {
+	background-color: $white-three;
+	padding-top: 20px;
+    .inner {
+    	&:after {
+    		content: " ";
+		    display: block;
+		    width: -moz-calc(100% + 50px);
+		    width: 100%;
+		    height: 2px;
+		    margin: 18px auto 0px;
+		    background-image: linear-gradient(to right, $reddish-grey 33%, $white-three 0%);
+		    background-position: bottom;
+		    background-size: 10px 2px;
+		    background-repeat: repeat-x;
+		    position: relative;
+    	}
+    	margin: 0 24px;
+    }
+	.filter-item {
+		padding: 10px;
+		margin-right: 20px;
+		padding-right: 50px;
+		display: inline-block;
+		border: 0.5px solid $claret;
+		cursor: pointer;
+		position: relative;
+
+		@include phone() {
+			margin-bottom: 5px;
+		    margin-right: 5px;
+		    white-space: nowrap;
+		    max-width: 100%;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		}
+		.close {
+			// background-image: url('../svg/icon-close-filter.svg');
+			width: 35px;
+			height: 35px;
+			@include phone() {
+				    top: 5px;
+			}
+			svg {
+				width: 35px;
+				height: 35px;
+			}
+			display: inline-block;
+			position: absolute;
+			right: 8px;
+			top: 8px;
+		}
+		&:hover {
+			border-color: $coral;
+			* {
+				color: $coral;
+				svg * {
+					stroke: $coral;
+				}
+			}
+		}
+	}
+}
+
+
+.filters {
+	position: relative;
+	z-index: 0;
+	.sub-menu {
+		list-style: none;
+		&:after {
+    		content: " ";
+    		display: block;
+    		width: calc(100% + 50px);
+    		height: 2px;
+    		margin-top: 18px;
+    		margin-bottom: 20px;
+    		background-image: linear-gradient(to right, $reddish-grey 33%, $auburn 0%);
+			background-position: bottom;
+			background-size: 10px 2px;
+			background-repeat: repeat-x;
+			position: relative;
+			left: -50px;
+    	}
+		.menu-item {
+			cursor: pointer;
+			position: relative;
+			padding-left: 30px;
+			.boxer {
+			 	width: 15px;
+				height: 15px;
+				margin-right: 20px;
+				display: inline-block;
+		  		border: solid 1px $beige;
+				top: 1px;
+			    position: absolute;
+			    left: 0;
+		  	}
+		  	.text-of-filter {
+				display: inline-block;
+    			width: calc(100% - 52px);
+		  	}
+		  	&:hover {
+		  		.boxer {
+		  			border-color: $salmon;
+		  		}
+		  		color: $salmon;
+		  	}
+		  	&.active {
+		  		color: $beige;
+		  		.boxer {
+		  			border-color: $beige;
+		  			background-color: $beige;
+		  		}
+		  	}
+		  }
+	}
+	.filter-trigger {
+		@extend .menu-label;
+		cursor: pointer;
+		position: absolute;
+		right: 24px;
+		bottom: -35px;
+		color: rgba(255, 88, 63, 0.9);
+		@include phone() {
+			font-size: 1.8rem !important;
+		}
+		&:hover, &.active {
+			color: $claret;
+			z-index: 99;
+			svg * {
+				fill: $claret;
+				stroke: $claret;
+			}
+		}
+		&.active { //fucking mobile
+			color: $claret;
+			z-index: 99;
+			svg * {
+				fill: $claret;
+				stroke: $claret;
+			}
+		}
+	}
+}	

@@ -1,0 +1,28 @@
+.list {
+	// @extend .f-med;
+}
+
+.list-item {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.bulleted-list {
+	margin-top: 3rem;
+	li {
+		position: relative;
+		padding-left: 2rem;
+		&:before {
+			content: "\2022 ";
+			display: inline-block;
+			position: absolute;
+			left: 0;
+		}
+	}
+}
+
+
+@if $EXTENDBASE {
+	ul { @extend .list; }
+	li { @extend .list-item; }
+}

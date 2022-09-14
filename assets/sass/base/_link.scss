@@ -1,0 +1,52 @@
+a, .link {
+	transition-property: color;
+	transition-duration: 0.3s;
+
+	svg, svg * {
+		transition-property: stroke, margin-left;
+		transition-duration: 0.3s;
+	}
+
+	// @extend .c-p-aqua;
+
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover { 
+		color: #007d5e;
+		svg * {
+			stroke: #007d5e;
+		}
+	}
+}
+
+.link-alt {
+	@extend .link;
+
+	&:hover {
+
+	}
+}
+
+.link-arrow, .link-wrapper {
+	position: relative;
+	@extend .link;
+	a {
+		position: relative;
+	}
+	svg {
+		width: 3.75rem;
+    margin-left: 1.5rem;
+    top: 1.15rem;
+    display: inline-block;
+	}
+	svg * {
+		stroke: #00b4a2;
+	}
+
+	&:hover {
+		svg {
+			margin-left: 1.25rem;
+		}
+	}
+}

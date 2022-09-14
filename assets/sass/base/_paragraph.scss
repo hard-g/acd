@@ -1,0 +1,61 @@
+.paragraph, body {
+	// @extend .f-reg;
+
+	// font-size: 3rem;
+	// line-height: 4rem;
+
+	// @include tablet() {
+	// 	font-size: 3.2rem;
+	// 	line-height: 4.2rem;
+	// }
+
+	 font-family: SelfModern-TextBeta;
+  font-size: 2.3rem;
+		line-height: 1.29;
+  text-align: left;
+  color: #62060a;
+
+}
+p a, .essay-content ul a, .essay-content ol a {
+  	color: $coral;
+  	border-bottom: 1px dashed $coral;
+  	font-family: GrotexBeta;
+  	&:hover {
+  		color: $claret;
+  		border-color: $claret;
+  	}
+}
+.js-trigger {
+	border-bottom: 0px !important;
+}
+p strong {
+	text-transform: uppercase;
+	letter-spacing: 1.19px;
+	font-size: 2rem;
+}
+p em {
+	font-family: SelfModern-Italic;
+}
+.attr {
+	top: -5px;
+    position: relative;
+    left: 40px;
+    font-size: 1.9rem;
+    span, em {
+    	font-size: 1.9rem;
+    }
+    display: inline-block;
+    margin-bottom: 30px;  
+    span {
+    	display: inline-block;
+    }
+}
+.attr + .footnote-trigger {
+    top: -17px;
+    margin-left: 40px;
+}
+
+
+@if $EXTENDBASE {
+	p { @extend .paragraph; }
+}

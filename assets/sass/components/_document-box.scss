@@ -1,0 +1,60 @@
+.document-box {
+	// display: flex;
+	background-color: $white-three;
+
+	// .document-image {
+	// 	max-width: 50%;
+	//     height: auto;
+	//     display: flex;
+	//     align-items: center;
+	//     padding: 50px;
+	//     flex-direction: column;
+	//     align-self: center;
+	//     margin: auto;
+	//     img {
+	//     	width: 100%;
+	//     }
+
+	// }
+	// .document-image {
+		width: 100vw;
+	    // float: left;
+	    padding: 5px 30px; // accounts for the 20px on the children
+	    height: 70vh;
+	    // padding-top: 100px;
+	    overflow: scroll;
+	    display: flex;
+	    &::-webkit-scrollbar {
+		  display:none;
+		}
+	    .document-image {
+	    	display: flex;
+		    flex-direction: column;
+		    align-self: center;
+		    margin: auto;
+		    // flex: 0 70%;
+		    // min-width: 70%;
+		    // padding-right: 100px;
+		    padding: 20px;
+		    &:first-child {
+		    	// margin-left: 36%; // this will need work
+		    }
+		    img {
+				width: auto;
+    			height: calc(70vh - 100px);
+		    }
+	    }
+	// }
+}
+
+.image-cropper {
+	width: 100%;
+    height: 10vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.lightbox-caption {
+		display: block;
+	}

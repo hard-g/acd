@@ -1,0 +1,26 @@
+caption, .caption {
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+
+	&-small {
+		@extend .caption;
+		font-size: 1.6rem;
+		line-height: 2.2rem;
+	}
+	&-smallest {
+		@extend .caption;
+		font-size: 1.4rem;
+		line-height: 1.7rem;
+	}
+	&-title {
+		@extend .caption;
+		text-transform: uppercase;
+	}
+}
+
+@include tablet() {
+	.caption-small, .caption-smallest, .caption {
+		font-size: 2.2rem;
+		line-height: 3rem;
+	}
+}

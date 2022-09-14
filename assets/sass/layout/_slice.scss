@@ -1,0 +1,108 @@
+.slice {
+    display: flex;
+    flex-wrap: wrap;
+	width: 100%;
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+    &.column {
+        flex-direction: column;
+        align-items: center;
+    }
+    @for $i from 1 through 100 {
+        .slice-#{$i} {
+            flex: 0 0 $i * 1%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 12rem;
+            box-sizing: border-box;
+
+            p {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @include tablet() {
+                flex: 0 0 100%;
+            }
+            // @include phone-l() {
+            //     flex: none;
+            //     display: block;
+            //     padding: 3rem;
+            //     width: 100%;
+            // }
+            // @include phone-l() {
+            //     flex: none !important;
+            //     display: block;
+            //     padding: 3rem !important;
+            //     width: 100% !important;
+            //     min-height: 20vh;
+            // }
+            &.grow {
+                flex-grow: 1;
+                width: 100%;
+            }
+            &.no-pad {
+                padding: 0;
+            }
+        }
+    }
+
+    @include tablet() {
+        .slice-50 {
+            // min-height: 100vw;
+        }
+    }
+}
+
+.not-ff .column.slice .slice-100.grow {
+    flex: 0 0 50%;
+}
+.is-ff {
+    .slice .slice-50.grow {
+        flex: 0 0 100%;
+    }
+}
+
+
+.slice-gutter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -1em;
+    box-sizing: content-box;
+    flex-grow: 2;
+    width: 101.95%;
+    position: relative;
+    align-items: flex-start;
+
+    .slice-item {
+        padding: 1em;
+    }
+    .slice-align-top {
+        align-self: flex-start;
+    }
+    .slice-align-bottom {
+        align-self: flex-end;
+    }
+    &.slice-wrapper-mod {
+        padding-top: 0;
+        padding-right: 0;
+    }
+}
+
+.slice-col {
+    display: flex;
+    flex-flow: column wrap; 
+}
+
+.home .slice-50 p {
+    max-width: 550px;
+}
+
+@include tablet() {
+    .js-gallery .slice-50, .featured-image-row {
+        min-height: 80vw;
+    }
+}

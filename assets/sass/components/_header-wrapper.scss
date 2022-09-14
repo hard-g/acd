@@ -1,0 +1,90 @@
+.page-header-wrapper {
+	background: white;
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 100vw;
+	.inner {
+		margin: auto;
+		max-width: 50%;
+		align-self: center;
+		@include tablet() {
+			max-width: 100%;
+		}
+	}
+	.page-title, .subhead {
+		margin: auto;
+		align-self: center
+	}
+	.subhead {
+		max-width: 70%;
+		@include phone() {
+			max-width: 90%;
+		}
+	}
+	.page-title {
+		display: block;
+  		margin-bottom: 18px;
+	}
+
+
+	// bottom
+	&:after {
+		@extend .borderWide;
+		right: 0;
+		bottom: 0;
+		left: 0;					
+	}
+}
+
+.essay-hero.wrapper {
+	max-width: 65vw;
+	margin: 50px auto;
+	@include phone() {
+		max-width: 100%;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.essay-wrapper {
+	padding-top: 30px;
+	.page-title {
+		margin: 25px auto;
+		max-width: 40vw;
+		@include tablet() {
+			max-width: 90vw;
+		}
+	}
+}
+
+.essay-content {
+	padding-bottom: 100px;
+}
+
+
+.page-template-page-about  {
+
+	.page-header-wrapper {
+		@include phone() {
+			margin-bottom: 60px;
+		}
+// bottom
+	&:after {
+		@extend .borderWide;
+		    left: 40%;
+    width: 20%;
+    bottom: 0;					
+	}	
+}}
+
+	.essay-header{
+		&:before {
+	@include phone() {
+			margin-top: 10px;
+		}
+	}
+}

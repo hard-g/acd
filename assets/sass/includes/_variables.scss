@@ -1,0 +1,50 @@
+// typography math
+$baseline: 10px;
+$baseline-rem: 1.5rem;
+$baseline-lineheight: 25px;
+$line-height-factor: 1.7;
+$letter-spacing-factor: 0.0009;
+
+
+// responsive
+	// global breaks
+	$tiny: 320;
+	$small: 480;
+	$phone: 768;
+	$phone-l: 768;
+	$tablet: 968;
+	$tablet-l: 1024;
+	$full: 768; // set to the same as wrapper-width
+	$desktop: 1280;
+
+	$spacing-quad: 8rem;
+	$spacing-double: 4rem;
+	$spacing: 2rem;
+
+
+
+	// build media queries
+	@mixin tiny() {
+		@include respond-to($tiny) { @content; }
+	}
+	@mixin small() {
+		@include respond-to($small) { @content; }
+	}
+	@mixin phone() {
+		@include respond-to($phone) { @content; }
+	}
+	@mixin phone-l() {
+		@include respond-to($phone-l) { @content; }
+	}
+	@mixin tablet() {
+		@include respond-to($tablet) { @content; }
+	}
+	@mixin tablet-l() {
+		@include respond-to($tablet-l) { @content; }
+	}
+	@mixin full() {
+		@include respond-to($full) { @content; }
+	}
+	@mixin desktop() {
+		@include respond-to($desktop) { @content; }
+	}

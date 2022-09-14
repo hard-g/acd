@@ -1,0 +1,191 @@
+html.wf-loading, body.loading {
+	.main-menu ul, section.main {
+		opacity: 0;
+	}
+	.logo .main svg {
+	 	g g, g polygon, g rect, g path {
+	 		opacity: 0;
+	 	}
+		g rect:last-child {
+			opacity: 1;
+			animation: load 6.4s infinite linear;
+		}
+	}
+}
+
+@keyframes load {
+	0% {
+		width: 5%;
+	}
+	50% {
+		width: 60%;
+	}
+	100% {
+		width: 5%;
+	}
+}
+
+//default logo styles
+.logo .main svg {
+ 	.logo-letter {
+ 		opacity: 1;
+ 		transition-property: opacity;
+		transition-delay: 3.2s;
+		transition-timing-function: ease;
+		transition-duration: 1.3s; 
+
+ 		&.h, &.w, &.e {
+ 			transition-delay: 0s;
+ 		}
+ 	}
+}
+
+
+// load more
+.next-post {
+	background: transparent;
+	height: 0;
+	transition: all 0.3s ease;
+	width: 100vw;
+
+	&:before {
+		content: " ";
+    	height: 5px;
+    	animation: load-next-hor 4s infinite linear;
+    	position: relative;
+    	margin: auto;
+    	display: block;
+    	top: 60px;
+	}
+
+	&:after {
+		content: " ";
+		width: 5px;
+		animation: load-next-vert 4s infinite linear;
+		// animation-delay: 0.1s;
+		position: relative;
+		margin: auto;
+		display: block;
+		top: 60px;
+	}
+
+	&.loading {
+		// height: 120px;
+		// @extend .c-p-bg-plumb-40;
+	}
+}
+
+// // sitewide t-colors
+$colorsAll: (
+	"plumb": (
+		"hex": #843cae,
+		"alts": (40, 10)
+	),
+	"aqua": (
+		"hex": #00b4a2,
+		"alts": (50, 20, 5)
+	),
+	"peach": (
+		"hex": #f48680,
+		"alts": 10
+	),
+	"nectarine": (
+		"hex": #ee6a49,
+		"alts": 10
+	),
+	"bg": (
+		"hex": #000000,
+		"alts": (7, 60)
+	),
+	"blue": (
+		"hex": #010080,
+		"alts": (40, 35, 10, 7)
+	),
+	"apricot": (
+		"hex": #f58b61
+	),
+	"seafoam": (
+		"hex": #9affda,
+		"alts": 30
+	),
+	"mustard": (
+		"hex": #e4ae3c,
+		"alts": 10
+	),
+	"seablue": (
+		"hex": #0000ff,
+		"alts": (35, 7)
+	),
+	"skyblue": (
+		"hex": #00adef,
+		"alts": 10
+	),
+	"grey": (
+		"hex": #d2d2d2
+	),
+	"forrest": (
+		"hex": #007d5e
+	)
+);
+
+
+@keyframes load-next-vert {
+	0% {
+		top: 55px;
+		height:5px;
+		background-color: map-get(map-get($colorsAll, "plumb"), 'hex');
+	}
+	20% {
+		top: 25px;
+		height: 60px;
+		background-color: map-get(map-get($colorsAll, "peach"), 'hex');
+	}
+	40% {
+		top: 55px;
+		height:5px;
+		background-color: map-get(map-get($colorsAll, "seafoam"), 'hex');
+	}
+	60% {
+		top: 25px;
+		height: 60px;
+		background-color: map-get(map-get($colorsAll, "nectarine"), 'hex');
+	}
+	80% {
+		top: 55px;
+		height:5px;
+		background-color: map-get(map-get($colorsAll, "blue"), 'hex');
+	}
+	100% {
+		top: 25px;
+		height: 60px;
+		background-color: map-get(map-get($colorsAll, "mustard"), 'hex');
+	}
+}
+@keyframes load-next-hor {
+	0% {
+		width:5px;
+		background-color: map-get(map-get($colorsAll, "plumb"), 'hex');
+	}
+	20% {
+		width: 60px;
+		background-color: map-get(map-get($colorsAll, "peach"), 'hex');
+	}
+	40% {
+		width:5px;
+		background-color: map-get(map-get($colorsAll, "seafoam"), 'hex');
+	}
+	60% {
+		width: 60px;
+		background-color: map-get(map-get($colorsAll, "nectarine"), 'hex');
+	}
+	80% {
+		width:5px;
+		background-color: map-get(map-get($colorsAll, "blue"), 'hex');
+	}
+	100% {
+		width: 60px;
+		background-color: map-get(map-get($colorsAll, "mustard"), 'hex');
+	}
+}
+
+

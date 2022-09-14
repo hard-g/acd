@@ -1,0 +1,40 @@
+.wrapper {
+	max-width: $full + px;
+	margin-right: auto;
+	margin-left: auto;
+	align-self: center;
+	box-sizing: content-box;
+}
+
+.wrapper-sml {
+	max-width: $small + px;
+	align-self: center;
+}
+
+@include full() {
+	.wrapper {
+		padding: 0 $spacing-quad !important;
+    width: 100%;
+    display: block !important;
+    flex: 1 !important;
+	}
+}
+
+@include tablet() {
+	.wrapper {
+		padding: 0 $spacing-double !important;
+    width: 100%;
+    display: block !important;
+    flex: 1 !important;
+    box-sizing: border-box;
+	}
+}
+
+@include phone() {
+	.wrapper {
+		padding: 0 4rem !important;
+    width: 100%;
+    display: block !important;
+    flex: 1 !important;
+	}
+}

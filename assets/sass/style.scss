@@ -1,0 +1,52 @@
+// reset it all
+@import "includes/reset";
+
+// includes (variables and macros) 
+@import "includes/colors";
+@import "includes/variables";
+@import "includes/mixins";
+@import "includes/type";
+
+// base elements
+@import "base/base";
+
+// typography
+@import "base/list";
+@import "base/paragraph";
+@import "base/link";
+@import "base/caption";
+// ui
+@import "base/button";
+@import "base/input";
+@import "base/icon";
+// base layout 
+@import "base/hr";
+@import "base/blockquote";
+ 
+// layout grid
+@import "layout/slice"; 
+@import "layout/wrapper";
+@import "layout/grid";
+
+// components (very small pieces of modules)
+@import "components/header-wrapper";
+@import "components/document-box";
+@import "components/document-preview";
+@import "components/footnote";
+
+
+// structures
+@import "structures/nav-main";
+@import "structures/filter-nav";
+
+
+// states
+@import "states/validation";
+@import "states/inview-el";
+@import "states/loading";
+
+
+body{
+ overflow-x: hidden;
+    max-width: 100vw;
+    }
