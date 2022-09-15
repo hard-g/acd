@@ -53,7 +53,7 @@
     	$id = $postObject->ID;
     	$document = get_fields($id);
 
-			$image_url = ! empty( $document['images'][0]['image'] ) ? $document['images'][0]['image']['sizes']['thumbnail'] : '';
+			$image_url = ! empty( $document['images'][0]['image'] ) ? $document['images'][0]['image']['sizes']['large'] : '';
 
             $out .= '<a class="js-trigger item-image" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src=' . esc_url( $image_url ) . ' /></a>';
             $out .= '<section class="document-preview-overlay">';
