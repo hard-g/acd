@@ -133,8 +133,8 @@
 				$html .= '<div class="grid-item">';
 					$html .= '<a class="flexer" href="'.get_the_permalink($id).'">';
 						$html .= '<div class="inner">';
-					if($postContent['images'][0]['image']) {
-							$html .= '<div class="image-cropper" style="background-image: url('.$postContent['images'][0]['image'].');"></div>';
+					if ( ! empty( $postContent['images'][0]['image'] ) ) {
+							$html .= '<div class="image-cropper" style="background-image: url(' . esc_url( $postContent['images'][0]['image']['sizes']['thumbnail'] ) . ');"></div>';
 					} else {
 							$html .= '<div class="image-cropper" style="background-color: #EAE2DF;");"></div>';
 					}
@@ -155,7 +155,7 @@
 			$html .= '<div class="grid-item"><a class="flexer" href="'.get_the_permalink().'">';
 
 			if ( ! empty( $postContent['images'][0]['image'] ) ) {
-				$html .= '<div class="inner"><div class="image-cropper" style="background-image: url('.$postContent['images'][0]['image'].');"></div>';
+				$html .= '<div class="inner"><div class="image-cropper" style="background-image: url(' . esc_url( $postContent['images'][0]['image']['sizes']['thumbnail'] ) . ');"></div>';
 			} else {
 				$html .= '<div class="inner"><div class="image-cropper" style="background-color: #EAE2DF;");"></div>';
 			}

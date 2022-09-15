@@ -50,11 +50,12 @@
 	$count = 0;
     foreach($posts['featured'] as $postObject) {
     $out .= '<div class="document-preview">';
-      // $out .= '<div class="item-image"><img src="'.$image['image'].'" /></div>';
     	$id = $postObject->ID;
     	$document = get_fields($id);
 
-            $out .= '<a class="js-trigger item-image" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src='.$document['images'][0]['image'].' /></a>';
+			$image_url = ! empty( $document['images'][0]['image'] ) ? $document['images'][0]['image']['sizes']['thumbnail'] : '';
+
+            $out .= '<a class="js-trigger item-image" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src=' . esc_url( $image_url ) . ' /></a>';
             $out .= '<section class="document-preview-overlay">';
             $out .= '<section class="close-container close"><div class="close-icon"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="71" viewBox="0 0 72 71"><g fill="none" fill-rule="evenodd" stroke="#FBD3BB" stroke-linecap="square" stroke-width="2"><path d="M20.358 16.862l34.135 34.135M18.742 52.904L53.455 18.19"/></g></svg></div></section>';
             $out .= '<section class="document-data">';
@@ -69,7 +70,7 @@
             $out .= '<div class="image">';
             foreach($document['images'] as $image) {
               $i++;
-              $out .= '<div class="item-image"><img src="'.$image['image'].'" />';
+              $out .= '<div class="item-image"><img src="' . esc_url( $image['image']['sizes']['thumbnail'] ) . '" />';
               if($iLength > 1) {
                 $out .= '<span class="item-counter document-counter">'.$i.'/'.$iLength.'</span>';
               }

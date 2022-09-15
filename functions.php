@@ -84,7 +84,7 @@ function document_shortcode_query($atts, $content){
         // $out = 'found a post';
                 // <h4><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h4>
             $out = '<div class="document-preview">';
-            $out .= '<a class="js-trigger" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src='.$document['images'][0]['image'].' />';
+            $out .= '<a class="js-trigger" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src=' . esc_url( $document['images'][0]['image']['sizes']['medium'] ) . ' />';
             $out .= '<div class="image-caption-title">'. get_the_title($id) .'</div>';
             $out .= '<div class="image-caption-ctr">'. $document['caption'] .'</div>';
             $out .= '</a>';
@@ -101,7 +101,7 @@ function document_shortcode_query($atts, $content){
             $out .= '<div class="image">';
             foreach($document['images'] as $image) {
               $i++;
-              $out .= '<div class="item-image"><img src="'.$image['image'].'" />';
+              $out .= '<div class="item-image"><img src="' . esc_url( $image['image']['sizes']['medium'] ) . '" />';
               if($iLength > 1) {
                 $out .= '<span class="item-counter document-counter">'.$i.'/'.$iLength.'</span>';
               }
