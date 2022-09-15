@@ -18,7 +18,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <!-- History.js -->
-<script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+<script src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lib/jquery-history.js"></script>
 
 <!-- Ajaxify -->
 <!-- <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script> -->
