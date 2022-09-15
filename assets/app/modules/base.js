@@ -1,5 +1,5 @@
-var $ = require('jQuery'),
-    _ = require('Underscore')
+var $ = require('jquery'),
+    _ = require('underscore')
     inView = require('inview');
 
 var Intercom = require('./lib/intercom.js');

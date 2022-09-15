@@ -1,6 +1,6 @@
 var jQuery = require('jquery');
-var $ = require('jQuery');
-var _ = require('Underscore');
+var $ = require('jquery');
+var _ = require('underscore');
 
 var Overlay = (function($, _) {
     'use strict';
