@@ -17,7 +17,7 @@
 
 	<section class="hero">
 
-		<div class="bg bg-1"></div>
+		<div class="bg bg-1 active"></div>
 		<div class="bg bg-2"></div>
 		<div class="bg bg-3"></div>
 		<div class="bg bg-4"></div>
