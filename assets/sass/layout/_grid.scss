@@ -177,6 +177,10 @@
 		width: calc(100% - 80px);
 		@include phone() {
 			width: calc(100% - 40px);
+
+            .attr span.attr-quote{
+              padding-right:40px;
+            }
 		}
 	}
 }
@@ -243,7 +247,7 @@ hr {
 					@extend .borderWide;
 					right: 0;
 					bottom: 0;
-					left: 0;					
+					left: 0;
 				}
 			}
 			// right
@@ -307,7 +311,7 @@ hr {
 			@extend .borderWide;
 			right: 0;
 			top: 0;
-			left: 0;					
+			left: 0;
 		}
 		.grid-item {
 			flex: 0 50%;

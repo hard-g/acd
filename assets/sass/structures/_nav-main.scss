@@ -82,8 +82,31 @@ nav.main {
 	}
 
 }
+
+.safari .grid.meta .grid-2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+.safari .filter-container-bar .filter-item {
+  padding-top: 3px; }
+
+.safari .filter-container-bar .filter-item .close {
+  top: 4px; }
+
+.safari .filter-trigger.fixed-yo {
+  padding: 0.7rem; }
+
+.safari nav.main .right-nav .controls-wrapper .menu-label, .safari nav.main .right-nav .controls-wrapper .filters .filter-trigger, .filters .safari nav.main .right-nav .controls-wrapper .filter-trigger {
+  top: 6px; }
+
+.safari nav.main .search {
+  top: 3px; }
+
+.safari .grid .grid-item .flexer {
+  position: initial !important; }
+
 .menu-main-nav-container, .filter-nav  {
-    ul {list-style: none; 
+    ul {list-style: none;
         margin: 0px;
         left: 0px;
         li:before {
@@ -242,7 +265,7 @@ body.no-scroll {
     color: white;
     border: none;
     text-align: center;
-    
+
     &::placeholder {
     	color: transparent;
     	letter-spacing: 2px;

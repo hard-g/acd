@@ -12,6 +12,17 @@
 		color: inherit;
 	}
 }
+
+.safari .document-preview-overlay {
+  overflow: scroll;
+  -webkit-transition: none !important;
+     -moz-transition: none !important;
+          transition: none !important; }
+  .safari .document-preview-overlay *, .safari .document-preview-overlay .image {
+    -webkit-transition: none !important;
+       -moz-transition: none !important;
+            transition: none !important; }
+
 .document-preview-overlay {
 	position: fixed;
 	top: 0;
@@ -81,7 +92,7 @@
     		overflow: hidden;
     		display: -webkit-box;
     		-webkit-line-clamp: 25;
-    		-webkit-box-orient: vertical; 
+    		-webkit-box-orient: vertical;
     	}
 	}
 	.image {
@@ -186,7 +197,7 @@
 		* {
 			opacity: 1;
 		}
-	}	
+	}
 }
 
 .featured-items-home {

@@ -226,9 +226,9 @@ body {
 
 .lightbox-caption {
   font-family: GrotexBETA;
-  font-size: 1.6rem;
-  line-height: 1.19;
-  letter-spacing: 0.7px;
+  font-size: 1.6rem !important;
+  line-height: 1.19 !important;
+  letter-spacing: 0.7px !important;
   text-align: left;
   color: $white;
 }
@@ -355,6 +355,25 @@ body {
   &-grey {
      color:  $purple-grey;
   }
+}
+
+.share, .footer .left-footer .inner li, .footer .right-footer .inner li {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-link, .footer .left-footer .inner a, .footer .left-footer .inner li a, .footer .right-footer .inner a, .footer .right-footer .inner li a {
+  font-family: GrotexBETA;
+  font-size: 1.4rem;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #f98367;
+  border-color: #f98367;
 }
 
 .citation {

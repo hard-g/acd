@@ -1,9 +1,9 @@
 // sets whether to extend standard modules
-// to their logical base elements 
+// to their logical base elements
 $EXTENDBASE: false;
 
 
-* { 
+* {
     box-sizing: border-box;
     margin-bottom: 0px;
 }
@@ -43,6 +43,18 @@ body {
         overflow: hidden;
     }
 }
+
+.is-ff .defs-only {
+  display: block;
+  visibility: hidden;
+}
+
+.is-ff .pull-quote:after, .is-ff .pull-quote:before {
+  background: none !important;
+  border-bottom: 1px dashed #9a8177;
+  content: " ";
+}
+
 section.main {
     clear: both;
     width: 100vw;
@@ -53,6 +65,10 @@ section.main {
     transition-timing-function: ease;
     transition-duration: 1.2s;
     padding-top: 40px;
+	background: white;
+	-webkit-backface-visibility: hidden;
+	position: relative;
+	z-index: 0;
 }
 
 body.home section.main {
@@ -440,4 +456,88 @@ p {
     font-size: 2.2rem;
     line-height: 1.18
 }
+
+/* === ALUX Esssay page edits - 8/11/18 === */
+.creditss{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.creditss .column{
+  flex:1 1 50%;
+}
+.creditss div.column:nth-of-type(1){margin-right:33px;}
+.creditss div.column:nth-of-type(2){margin-left:33px;}
+p.lower-essay-header{
+  font-family: SelfModern;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #62060a;
+     max-width: 77%;
+    margin: 0 auto 60px auto;
+}
+.column__count{
+  column-count: 2;
+  column-gap: 66px;
+}
+.column .index-entery{
+  display: block;
+  margin-bottom: 30px;
+}
+.column.column__count{margin-right:0px !important;}
+.column.column__count .index-entery{
+  display: inline-block;
+}
+.column .uni{
+  font-family: SelfModern;
+  font-size: 19px;
+  line-height: 1.37;
+  letter-spacing: 0.2px;
+  color: #62060a;
+  display: block;
+  margin-bottom: 0px;
+}
+.column .link a{
+  font-family: 'SelfModern-Italic';
+  font-size: 19px;
+  line-height: 1.37;
+  letter-spacing: 0.2px;
+  color: #ff583f;
+  margin-bottom: 20px;
+  display: inline;
+}
+.column .index-body{
+  font-family: GrotexBETA;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  color: #62060a;
+  margin-bottom: 10px;
+}
+.column .date-wrap{margin-bottom: 10px;}
+.column .date-title{
+  font-family: GrotexBETA;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.8px;
+  margin-bottom: 3px;
+  color: #9b9b9b;
+}
+.column .date-int{
+  font-family: GrotexBETA;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  color: #62060a;
+  margin-bottom:0px !important;
+}
+@media screen and (max-width:768px){.creditss{flex-direction: column;}.creditss div.column:nth-of-type(1), .creditss div.column:nth-of-type(2){margin: 0px;}}
+@media screen and (max-width:450px){p.lower-essay-header{max-width:100%;}}
+.column > *{word-break: break-word;}
+
 // //////////////////

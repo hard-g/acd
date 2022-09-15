@@ -34,7 +34,7 @@
 		@extend .borderWide;
 		right: 0;
 		bottom: 0;
-		left: 0;					
+		left: 0;
 	}
 }
 
@@ -77,8 +77,8 @@
 		@extend .borderWide;
 		    left: 40%;
     width: 20%;
-    bottom: 0;					
-	}	
+    bottom: 0;
+	}
 }}
 
 	.essay-header{
@@ -88,3 +88,75 @@
 		}
 	}
 }
+
+.fuller-bleed {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: white;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .fuller-bleed .controls {
+    position: fixed;
+    width: 144px;
+    height: 72px;
+    bottom: 0;
+    left: 0; }
+    .fuller-bleed .controls .zoom-in, .fuller-bleed .controls .zoom-out {
+      background-size: 81%;
+      background-position: center;
+      background-color: rgba(217, 56, 6, 0.95);
+      display: inline-block;
+      width: 72px;
+      height: 72px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      position: relative; }
+      .fuller-bleed .controls .zoom-in svg, .fuller-bleed .controls .zoom-out svg {
+        position: absolute;
+        left: 10px; }
+      .fuller-bleed .controls .zoom-in:hover svg *, .fuller-bleed .controls .zoom-out:hover svg * {
+        stroke: #a03700; }
+    .fuller-bleed .controls .zoom-in svg {
+      width: 116px;
+      height: 104px;
+      left: -24px;
+      top: -13px; }
+    .fuller-bleed .controls .zoom-out svg {
+      position: absolute;
+      left: 11px;
+      width: 50px;
+      height: 60px;
+      top: 6px; }
+  .fuller-bleed .inner-img {
+    background-size: contain;
+    margin: auto;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 80vw;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .fuller-bleed .panzoom-parent {
+    margin: auto;
+    width: 80vw;
+    height: 80vh;
+    overflow: visible !important; }
+  .fuller-bleed .close-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72px;
+    height: 72px;
+    background: transparent;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background-color: rgba(217, 56, 6, 0.95); }
+    .fuller-bleed .close-container .close-icon:hover svg * {
+      stroke: #a03700; }

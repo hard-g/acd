@@ -16,7 +16,7 @@
   color: #62060a;
 
 }
-p a, .essay-content ul a, .essay-content ol a {
+p a, .essay-content ul a, .essay-content ol a, .document-description a, .image-caption-ctr a {
   	color: $coral;
   	border-bottom: 1px dashed $coral;
   	font-family: GrotexBeta;
@@ -25,6 +25,22 @@ p a, .essay-content ul a, .essay-content ol a {
   		border-color: $claret;
   	}
 }
+
+.document-description a {
+  font-size: 2.1rem;
+}
+
+.lightbox-caption a, .grid-3 .grid-item .trans-bg .description a, .grid-2 .grid-item .trans-bg .description a, .grid-4 .grid-item .trans-bg .description a {
+  color: #fbd3bb;
+  border-bottom: 1px dashed rgba(255, 88, 63, 0.9);
+  font-family: GrotexBeta; }
+  .lightbox-caption a:hover, .grid-3 .grid-item .trans-bg .description a:hover, .grid-2 .grid-item .trans-bg .description a:hover, .grid-4 .grid-item .trans-bg .description a:hover {
+    color: #62060a;
+    border-color: #62060a;
+}
+
+.js-trigger {
+  border-bottom: 0px !important; }
 .js-trigger {
 	border-bottom: 0px !important;
 }
@@ -45,7 +61,7 @@ p em {
     	font-size: 1.9rem;
     }
     display: inline-block;
-    margin-bottom: 30px;  
+    margin-bottom: 30px;
     span {
     	display: inline-block;
     }
