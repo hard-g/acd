@@ -1,6 +1,6 @@
 <?php
 // this is the blog page
-	
+
 
 	get_header();
 	// ?>
@@ -8,15 +8,15 @@
 	  <filter id="duotone" color-interpolation-filters="sRGB"
 	          x="0" y="0" height="100%" width="100%">
 	    <feColorMatrix type="matrix"
-	      values="0.95 0 0 0  0.05 
-	              0.65 0 0 0  0.15  
-	              0.15 0 0 0  0.50 
+	      values="0.95 0 0 0  0.05
+	              0.65 0 0 0  0.15
+	              0.15 0 0 0  0.50
 	                0  0 0 1  0" />
 	  </filter>
 	<div class="landing">
-	
+
 	<section class="hero">
-		
+
 		<div class="bg bg-1"></div>
 		<div class="bg bg-2"></div>
 		<div class="bg bg-3"></div>
@@ -106,7 +106,7 @@
 		$out .= '</div>';
 	$out .= '</div>';
 	// if next
-	
+
 	// end next
 	$out .= '</section></section></div></div>';
 
