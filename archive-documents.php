@@ -1,10 +1,19 @@
 <?php /* Template Name: Documents Page */ ?>
-<?php 
+<?php
 	$allSubjectTerms = get_terms(array('taxonomy' => 'subjects'));
 
 	$params = $_SERVER['QUERY_STRING'];
 	parse_str($params, $filters);
-	if($filters['subject']) {
+
+	$filters = array_merge(
+		[
+			'subject' => null,
+			'type'    => null,
+		],
+		$filters
+	);
+
+	if ( $filters['subject'] ) {
 
 		$filters['tax_query'] = array(
        		array(
@@ -75,7 +84,7 @@
 				// var_dump(preg_match('/'.$subj->slug.'/', $filters['subject']));
 				// var_dump($subj->slug);
 				$html .= '<li class="menu-item';
-				if(preg_match('/'.$subj->slug.'/', $filters['subject'])) {
+				if( $filters['subject'] && preg_match('/'.$subj->slug.'/', $filters['subject'])) {
 					$html .= ' active';
 				}
 				$html .= '"><span class="boxer" data-type="subj" data-rel="'.$subj->slug.'"></span> <span class="text-of-filter">'.ucwords($subj->name).'</span></li>';
@@ -85,22 +94,22 @@
 	$html .= '<li class="menu-item no-border"><a>Type</a></li>';
 		$html .= '<ul class="sub-menu">';
 			$html .= '<li class="menu-item';
-			if(preg_match('/text/', $filters['type'])) {
+			if ( $filters['type'] && preg_match( '/text/', $filters['type'] ) ) {
 				$html .= ' active';
 			}
 			$html .= '"><span class="boxer" data-type="type" data-rel="text"></span> <span class="text-of-filter">Text</span></li>';
 			$html .= '<li class="menu-item';
-			if(preg_match('/still_image/', $filters['type'])) {
+			if ( $filters['type'] && preg_match( '/still_image/', $filters['type'] ) ) {
 				$html .= ' active';
 			}
 			$html .= '"><span class="boxer" data-type="type" data-rel="still_image"></span> <span class="text-of-filter">Still Image</span></li>';
 			$html .= '<li class="menu-item';
-			if(preg_match('/letter/', $filters['type'])) {
+			if ( $filters['type'] && preg_match( '/letter/', $filters['type'] ) ) {
 				$html .= ' active';
 			}
 			$html .= '"><span class="boxer" data-type="type" data-rel="letter"></span> <span class="text-of-filter">Letter</span></li>';
 			$html .= '<li class="menu-item';
-			if(preg_match('/person/', $filters['type'])) {
+			if ( $filters['type'] && preg_match('/person/', $filters['type'] ) ) {
 				$html .= ' active';
 			}
 			$html .= '"><span class="boxer" data-type="type" data-rel="person"></span> <span class="text-of-filter">Person</span></li>';
@@ -144,7 +153,8 @@
 			$postContent = get_fields($id);
 
 			$html .= '<div class="grid-item"><a class="flexer" href="'.get_the_permalink().'">';
-			if($postContent['images'][0]['image']) {
+
+			if ( ! empty( $postContent['images'][0]['image'] ) ) {
 				$html .= '<div class="inner"><div class="image-cropper" style="background-image: url('.$postContent['images'][0]['image'].');"></div>';
 			} else {
 				$html .= '<div class="inner"><div class="image-cropper" style="background-color: #EAE2DF;");"></div>';

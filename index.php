@@ -50,7 +50,6 @@
 	$count = 0;
     foreach($posts['featured'] as $postObject) {
     $out .= '<div class="document-preview">';
-    	print_r($document->ID);
       // $out .= '<div class="item-image"><img src="'.$image['image'].'" /></div>';
     	$id = $postObject->ID;
     	$document = get_fields($id);
