@@ -17,6 +17,23 @@
 	  	the_post();
 			$id = get_the_ID();
 			$postContent = get_fields($id);
+
+			$postContent = array_merge(
+				[
+					'subject'     => '',
+					'images'      => [],
+					'description' => '',
+					'creator'     => '',
+					'source'      => '',
+					'date'        => '',
+					'rights'      => '',
+					'coverage'    => '',
+					'time_period' => '',
+					'citation'    => '',
+				],
+				$postContent
+			);
+
 			$tags = wp_get_post_terms($id);
 			$lastTag = end($tags);
 
