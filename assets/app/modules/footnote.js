@@ -22,9 +22,15 @@ var Footnote = (function($, _) {
             console.log(this.$els.length);
 
             this.$els.each(function(i) {
-                $(this).unwrap();
-                console.log($(this).prev() );
-                $(this).appendTo($(this).prev());
+                if(!$(this).parent().hasClass('essay-content')) {
+                    $(this).unwrap();
+                }
+                $prev = $(this).prev();
+                if($('span.attr', $prev).length) {
+                    $(this).appendTo($('span.attr span', $prev));
+                } else {
+                    $(this).appendTo($prev);
+                }
                 self.appendTrigger($(this), i);
             });
             this.$triggers = $('.footnote-trigger');

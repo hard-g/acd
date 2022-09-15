@@ -43,6 +43,62 @@ base = (function($, _ , Intercom) {
 const bgStart = 1;
 let i = bgStart;
 
+setTimeout(function(context) {
+                var $ = window.jQuery || window.$;
+                $('.single .document-image img').each(function() {
+                    $(this).on('click', function(e) {
+
+                        // e.preventDefault();
+                        $('body').append('<div class="fuller-bleed"><div class="panzoom-parent"><div class="inner-img panzoom" style="background-image: url('+$(this).attr('src')+');"></div></div><div class="controls"><div class="zoom-in"><svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102"><g fill="none" fill-rule="evenodd" stroke="#FBD3BB" stroke-linecap="square" stroke-width="2"><path d="M26.76 48.44h48.274M51.103 75.068V25.976"/></g></svg></div><div class="zoom-out"><svg xmlns="http://www.w3.org/2000/svg" width="51" height="3" viewBox="0 0 51 3"><path fill="none" fill-rule="evenodd" stroke="#FBD3BB" stroke-linecap="square" stroke-width="2" d="M.87 1.485h48.274"/></svg></div></div><section class="close-container close"><div class="close-icon"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="71" viewBox="0 0 72 71"><g fill="none" fill-rule="evenodd" stroke="#FBD3BB" stroke-linecap="square" stroke-width="2"><path d="M20.358 16.862l34.135 34.135M18.742 52.904L53.455 18.19"></path></g></svg></div></section></div>');
+                        var $section = $('.fuller-bleed');
+                        var $panzoom = $section.find('.panzoom');
+                          $panzoom.panzoom({
+                            $zoomIn: $section.find(".zoom-in"),
+                            $zoomOut: $section.find(".zoom-out"),
+                            // panOnlyWhenZoomed: true,
+                            transition: true,
+                            duration: 200,
+                            easing: "ease-in-out",
+                            contain: 'invert',
+                            minScale: 1
+                          });
+                            $panzoom.parent().on('mousewheel.focal', function( e ) {
+                                e.preventDefault();
+                                var delta = e.delta || e.originalEvent.wheelDelta;
+                                var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+                                $panzoom.panzoom('zoom', zoomOut, {
+                                  increment: 0.1,
+                                  animate: false,
+                                  focal: e
+                                });
+                            });
+                        $('.close-container', $section).on('click', function() {
+                            $('.fuller-bleed').remove();
+                        });
+                    })
+                });
+            }, 1000, this);
+
+ // setTimeout(function(context) {
+ //                var $ = window.jQuery || window.$;
+ //                $('.single .document-image img').each(function() {
+ //                    $(this).on('click', function(e) {
+ //                        e.preventDefault();
+ //                        $('body').append('<img src="'+$(this).attr('src')+'" class="fuller-bleed" />');
+ //                        $('.fuller-bleed').on('click', function() {
+ //                            $(this).remove();
+ //                            $('.zoomContainer').remove();
+ //                        }).elevateZoom({
+ //                            zoomType: "inner",
+ //                            cursor: "crosshair"
+ //                        })
+ //                        setTimeout(function() {
+ //                            $('.fuller-bleed').trigger('mouseenter');
+ //                        },100);
+ //                    })
+ //                });
+ //            }, 1000, this);
+
 setInterval(function() {
     if(i >bgsLen) {
         i = bgStart;
@@ -125,11 +181,16 @@ if($('body').hasClass('home')) {
     })
 }
 
-if($(window).width() <= 968) {
-    $('.featured-items-home .document-preview').on('click', function() {
-        $('.featured-items-home.image').toggleClass('visi');
-    })
-}
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    // alert("1") // Chrome
+  } else {
+    $('body').addClass('safari');
+    // $('.featured-items-home .document-preview').on('click', function() {
+    //     $('.featured-items-home.image').toggleClass('visi');
+    // })
+}}
 
 if($('body').hasClass('page-template-archive-documents') && $(window).width() >= 1024) {
     var $f = $('.filter-nav');
@@ -213,12 +274,11 @@ $('.filter-trigger').on('click', function() {
             }
 
             // For use within normal web clients 
-            var isiPad = navigator.userAgent.match(/iPad/i) != null;
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
             // For use within iPad developer UIWebView
             // Thanks to Andrew Hedges!
             var ua = navigator.userAgent;
-            var isiPad = /iPad/i.test(ua) || /iPhone OS 3_1_2/i.test(ua) || /iPhone OS 3_2_2/i.test(ua);
 
             var isFirefox = typeof InstallTrigger !== 'undefined';
             hwe.isFirefox = isFirefox;
@@ -236,7 +296,7 @@ $('.filter-trigger').on('click', function() {
                 // AutoSize(document.querySelectorAll('textarea'));
             }
 
-            if(isiPad) {
+            if(isIOS) {
                 $('body').addClass('is-ipad');
             }
 
@@ -246,7 +306,14 @@ $('.filter-trigger').on('click', function() {
                 $('body').addClass('not-ff');
             }
 
-
+            if($('body').hasClass('is-ipad') || $('body').hasClass('safari')) {
+                $('.featured-items-home .js-trigger img').on('click', function() {
+                    $('.featured-items-home.image').addClass('visi');
+                    $('.close-container.close').on('click', function() {
+                        $('.featured-items-home.image').removeClass('visi');
+                    })
+                })
+            }
 
             // // file input hack
             // $('input[type="file"]').each(function() {
