@@ -1,4 +1,4 @@
-<?php 
+<?php
 	get_header();
 
 	$html = '';
@@ -119,7 +119,7 @@
 				$html .= '</div>';
 			$html .= '</div>';
 			$html .= '</div>';
-			
+
 	  }
 	  $html .= '</section>';
 	}

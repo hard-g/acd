@@ -6,7 +6,7 @@
 
 
 	<!--- replace http://localhost:4200/asets with get_template_directory_uri(); -->
-  
+
   <link href="<?php echo get_template_directory_uri(); ?>/favicon.png" rel="shortcut icon">
   <link href="<?php echo get_template_directory_uri(); ?>/icons/favicon.png" rel="apple-touch-icon-precomposed">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8">
@@ -22,8 +22,8 @@
   <meta property="og:description" content="Progressives, Anticommunists, Racism and Antisemitism at the University of Minnesota 1930-1942">
   <?php } ?>
 
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> 
-	<link href="<?php echo get_template_directory_uri(); ?>/dist/assets/style/style.css" rel="stylesheet" /> 
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="<?php echo get_template_directory_uri(); ?>/dist/assets/style/style.css" rel="stylesheet" />
 </head>
 <body <?php body_class(); ?> <?php language_attributes(); ?>>
 	<nav class="main">
@@ -34,7 +34,7 @@
 				<div class="header-page-title">
 				<?php
 				// print_r($post);
-					  if(is_single()) { 
+					  if(is_single()) {
 					  	$t = $post->post_type;
 					  	if($t === 'person' || $t === 'still_image' || $t === 'event' || $t === 'organization' || $t === 'place' || $t === 'letter') {
 					  		$title = 'Document';

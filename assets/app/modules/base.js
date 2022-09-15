@@ -184,8 +184,8 @@ if($('body').hasClass('home')) {
     })
 }
 
-var ua = navigator.userAgent.toLowerCase(); 
-if (ua.indexOf('safari') != -1) { 
+var ua = navigator.userAgent.toLowerCase();
+if (ua.indexOf('safari') != -1) {
   if (ua.indexOf('chrome') > -1) {
     // alert("1") // Chrome
   } else {
@@ -237,7 +237,7 @@ $('.filter-trigger').on('click', function() {
     $('.filter-nav').toggleClass('active');
 })
         this.checkDimensions();
-        this.utils();  
+        this.utils();
         // this.menu();
         // this.team();
         // this.svg();
@@ -253,19 +253,19 @@ $('.filter-trigger').on('click', function() {
         // window.hwe.arrows = this.svg;
     };
 
-    def.prototype = { 
+    def.prototype = {
 
         checkDimensions: function() {
             hwe.isDesktop = $(window).width() >= 968;
             hwe.isMobile = $(window).width() <= 967;
-            
+
             if(hwe.isDesktop) {
                 hwe.intercom.broadcast('desktop', this);
             }
 
             if(hwe.isMobile) {
                 hwe.intercom.broadcast('mobile', this);
-            } 
+            }
         },
 
         utils: function() {
@@ -276,7 +276,7 @@ $('.filter-trigger').on('click', function() {
                 document.getElementsByTagName("html")[0].className += ' ie';
             }
 
-            // For use within normal web clients 
+            // For use within normal web clients
             var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
             // For use within iPad developer UIWebView
@@ -287,7 +287,7 @@ $('.filter-trigger').on('click', function() {
             hwe.isFirefox = isFirefox;
 
 
-            if(Function('/*@cc_on return document.documentMode===10@*/')()){ 
+            if(Function('/*@cc_on return document.documentMode===10@*/')()){
                 $('html').addClass('ie10');
             }
 
@@ -368,11 +368,11 @@ $('.filter-trigger').on('click', function() {
             //         });
             //     });
             // });
-            
+
         },
 
         inviews: function() {
-            
+
             $('.inview-el').each(function() {
                 var $el = $(this);
                 var inview = $(this).data('inview', new inView($el.get(0), $el.offset().top, function(isInView, data) {
@@ -448,7 +448,7 @@ $('.filter-trigger').on('click', function() {
                 new Form($(this));
             });
         },
-        
+
         videos: function() {
             $('video').each(function() {
                 $(this).get(0).muted = true;
@@ -465,7 +465,7 @@ $('.filter-trigger').on('click', function() {
                             unit = 2,
                             rows = Math.ceil(amount / unit),
                             finalVal = (rows * base) + 'vw';
-                        
+
                         $(this).css('min-height', finalVal);
                     })
 
@@ -498,4 +498,4 @@ $('.filter-trigger').on('click', function() {
 
 }).call(this, $, _, Intercom);
 
-module.exports = base; 
+module.exports = base;

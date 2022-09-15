@@ -1,6 +1,6 @@
 <?php
 // function excerpt_please($post_id) {
-//   global $post;  
+//   global $post;
 //   $save_post = $post;
 //   $post = get_post($post_id);
 //   $output = get_the_excerpt();
@@ -49,13 +49,13 @@ add_filter('tiny_mce_before_init', 'wpa_45815');
 
 function enable_more_buttons($buttons) {
   $buttons[] = 'hr';
- 
-  /* 
+
+  /*
   Repeat with any other buttons you want to add, e.g.
     $buttons[] = 'fontselect';
     $buttons[] = 'sup';
   */
- 
+
   return $buttons;
 }
 add_filter("mce_buttons", "enable_more_buttons");
@@ -124,7 +124,7 @@ function document_shortcode_query($atts, $content){
 
 $types = array( 'person', 'places', 'events', 'organizations', 'letter', 'text', 'still_image' );
 
-add_filter( 'template_include', function( $template ) 
+add_filter( 'template_include', function( $template )
 {
   $types = array( 'person', 'places', 'events', 'organizations', 'letter', 'text', 'still_image' );
     // your custom post types
@@ -136,7 +136,7 @@ add_filter( 'template_include', function( $template )
     if ( is_post_type_archive(  $my_types ) ){
         // if it is return the common archive template
         return get_stylesheet_directory() . '/archive-documents.php';
-    } else 
+    } else
     // is the current request for a single page of one of your post types?
     if ( is_singular( $my_types ) ){
         // if it is return the common single template
@@ -149,7 +149,7 @@ add_filter( 'template_include', function( $template )
     // if ( ! in_array( $post_type, $my_types ) )
         // return $template;
 
-    // return get_stylesheet_directory() . '/single-document.php'; 
+    // return get_stylesheet_directory() . '/single-document.php';
 });
 
 
@@ -159,7 +159,7 @@ function register_my_menu() {
 }
 add_action( 'init', 'register_my_menu' );
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 
 // // add base options page
 // acf_add_options_page();
@@ -197,7 +197,7 @@ function sortable_faq_post_columns($query) {
 }
 
 function add_acf_columns ( $columns ) {
-   return array_merge ( $columns, array ( 
+   return array_merge ( $columns, array (
      'internal_numerator' => __( 'Orderby' ),
      'internal_flag_for_attention' => __( 'Flagged For Attention' ),
      'id' => __( 'Post ID' )
