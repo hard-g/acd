@@ -124,7 +124,10 @@ $('.controls-wrapper .search').on('click', function() {
         $s.on('keyup', function(e) {
             // console.log(e);
             if(e.keyCode === 13 && $s.val().length >= 2) {
-                window.location = window.location.origin+'/?s='+encodeURIComponent($s.val())+'&sentence=1';
+								var $searchForm = $s.closest( 'search-box-form' );
+								if ( $searchForm.length ) {
+									$searchForm.submit();
+								}
             }
         })
     } else {

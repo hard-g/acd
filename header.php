@@ -49,11 +49,14 @@
 					   <?php } else { ?>
  						<div class="header-page-title"><?php wp_title( ' ', true, 'right' ); ?> </div>
 					   <?php }
-					  ?> 
+					  ?>
 				</div>
 			</div>
 			<div class="middle-nav">
-				<input type="text" class="search-box" placeholder="Enter search here" />
+				<form class="search-box-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<input type="text" name="s" class="search-box" placeholder="Enter search here" />
+					<input type="hidden" name="sentence" value="1" />
+				</form>
 			</div>
 			<div class="right-nav">
 				<div class="controls-wrapper">
