@@ -17,10 +17,11 @@
     "broccoli-imagemin": "^0.2.1",
     "broccoli-jshint": "^0.5.5",
     "broccoli-merge-trees": "^0.2.1",
-    "broccoli-sass": "^0.6.6",
+    "broccoli-sass-source-maps": "^4.0.0",
     "broccoli-static-compiler": "^0.2.1",
     "grunt-zetzer": "^2.0.0",
-    "inview": "0.0.5"
+    "inview": "0.0.5",
+    "sass": "^1.54.9"
   },
   "dependencies": {
     "jquery": "^2.1.3",
