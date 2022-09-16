@@ -19,7 +19,7 @@
 p a, .essay-content ul a, .essay-content ol a, .document-description a, .image-caption-ctr a {
   	color: $coral;
   	border-bottom: 1px dashed $coral;
-  	font-family: GrotexBeta;
+  	font-family: GrotexBETA;
   	&:hover {
   		color: $claret;
   		border-color: $claret;
@@ -33,7 +33,7 @@ p a, .essay-content ul a, .essay-content ol a, .document-description a, .image-c
 .lightbox-caption a, .grid-3 .grid-item .trans-bg .description a, .grid-2 .grid-item .trans-bg .description a, .grid-4 .grid-item .trans-bg .description a {
   color: #fbd3bb;
   border-bottom: 1px dashed rgba(255, 88, 63, 0.9);
-  font-family: GrotexBeta; }
+  font-family: GrotexBETA; }
   .lightbox-caption a:hover, .grid-3 .grid-item .trans-bg .description a:hover, .grid-2 .grid-item .trans-bg .description a:hover, .grid-4 .grid-item .trans-bg .description a:hover {
     color: #62060a;
     border-color: #62060a;
