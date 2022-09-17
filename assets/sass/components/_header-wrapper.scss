@@ -1,3 +1,13 @@
+nav.main a.no-style {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.flexer.no-cursor {
+  pointer-events: none; }
+
 .page-header-wrapper {
 	background: white;
 	padding: 40px;

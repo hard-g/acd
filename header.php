@@ -1,6 +1,19 @@
 <!doctype html>
 <?php wp_head(); ?>
 <head>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106562274-1"></script>
+<!-- trackduck mobile tracker -->
+<script src="//cdn.trackduck.com/toolbar/prod/td.js" async data-trackduck-id="5add144b22c1d8b3042a9c85"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106562274-1');
+</script>
+
+
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
@@ -8,7 +21,6 @@
 	<!--- replace http://localhost:4200/asets with get_template_directory_uri(); -->
 
   <link href="<?php echo get_template_directory_uri(); ?>/favicon.png" rel="shortcut icon">
-  <link href="<?php echo get_template_directory_uri(); ?>/icons/favicon.png" rel="apple-touch-icon-precomposed">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<?php if (is_front_page())  { ?>
@@ -24,6 +36,8 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 	<link href="<?php echo get_template_directory_uri(); ?>/dist/assets/style/style.css" rel="stylesheet" />
+
+
 </head>
 <body <?php body_class(); ?> <?php language_attributes(); ?>>
 	<nav class="main">
@@ -36,14 +50,15 @@
 				// print_r($post);
 					  if(is_single()) {
 					  	$t = $post->post_type;
-					  	if($t === 'person' || $t === 'still_image' || $t === 'event' || $t === 'organization' || $t === 'place' || $t === 'letter') {
-					  		$title = 'Document';
+					  	if($t === 'person' || $t === 'still_image' || $t === 'event' || $t === 'text' || $t === 'organization' || $t === 'place' || $t === 'letter') {
+					  		$title = 'Documents';
+					  		$singleLink = home_url( '/documents/' );
 					  	} else if($t === 'essay') {
-					  		$title = 'Essay';
+					  		$title = 'Essays';
+					  		$singleLink = home_url( 'essays' );
 					  	}
 
-
-					     ?> <div class="header-page-title"> <?php echo $title; ?> </div><?php
+					     ?> <div class="header-page-title"> <a class="no-style" href="<?php echo get_bloginfo('url'); ?><?php echo $singleLink; ?>"><?php echo $title; ?> </div></a><?php
 					   } else if (is_search()) {?>
 					   <div class="header-page-title">Search</div>
 					   <?php } else { ?>
