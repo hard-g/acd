@@ -87,12 +87,13 @@
     		width: 100vw;
     		padding-top: 70px;
     	}
-    	.lightbox-caption {
+		.lightbox-caption, .grid-3 .grid-item .trans-bg .description, .grid-2 .grid-item .trans-bg .description, .grid-4 .grid-item .trans-bg .description, .lightbox-caption p, .grid-3 .grid-item .trans-bg .description p, .grid-2 .grid-item .trans-bg .description p, .grid-4 .grid-item .trans-bg .description p {
     		max-height: 70vh;
     		overflow: hidden;
     		display: -webkit-box;
     		-webkit-line-clamp: 25;
     		-webkit-box-orient: vertical;
+			margin-bottom: 6px;
     	}
 	}
 	.image {

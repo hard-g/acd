@@ -224,7 +224,7 @@ body {
   color: $white;
 }
 
-.lightbox-caption {
+.lightbox-caption, .grid-3 .grid-item .trans-bg .description, .grid-2 .grid-item .trans-bg .description, .grid-4 .grid-item .trans-bg .description, .lightbox-caption p, .grid-3 .grid-item .trans-bg .description p, .grid-2 .grid-item .trans-bg .description p, .grid-4 .grid-item .trans-bg .description p {
   font-family: GrotexBETA;
   font-size: 1.6rem !important;
   line-height: 1.19 !important;
