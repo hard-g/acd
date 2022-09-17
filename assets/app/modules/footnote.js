@@ -20,6 +20,7 @@ var Footnote = (function($, _) {
         setup : function() {
             var self = this;
             console.log(this.$els.length);
+						var $prev;
 
             this.$els.each(function(i) {
                 if(!$(this).parent().hasClass('essay-content')) {
