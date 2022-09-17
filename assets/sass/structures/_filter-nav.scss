@@ -14,6 +14,7 @@
 .filter-trigger {
 	transition: background-color 0.2s ease;
 	background-color: transparent;
+	font-size: 1.4rem;
 	&.fixed-yo {
 		background-color: $coral;
     	bottom: initial !important;
@@ -27,7 +28,7 @@
 	}
 }
 
-    
+
 .filters {
 	&.top {
 		z-index: 1;
@@ -181,4 +182,4 @@
 			}
 		}
 	}
-}	
+}
