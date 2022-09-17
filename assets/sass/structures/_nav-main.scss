@@ -258,6 +258,10 @@ body.no-scroll {
     overflow: hidden;
 }
 
+body.single-essay.no-scroll nav.main{
+  z-index: -1;
+}
+
 // search
 .search-box {
 	pointer-events: none;
