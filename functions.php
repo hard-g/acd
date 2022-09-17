@@ -66,9 +66,14 @@ add_filter("mce_buttons", "enable_more_buttons");
 
 add_shortcode('document', 'document_shortcode_query');
 function document_shortcode_query($atts, $content){
-  extract(shortcode_atts(array(
-   'id' => $id)
-   , $atts));
+	extract(
+		shortcode_atts(
+			[
+				'id' => get_queried_object_id(),
+			],
+			$atts
+		)
+	);
 
   // global $post;
 
