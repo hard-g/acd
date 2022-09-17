@@ -106,7 +106,7 @@ function document_shortcode_query($atts, $content){
             $out .= '<div class="image">';
             foreach($document['images'] as $image) {
               $i++;
-              $out .= '<div class="item-image"><img src="' . esc_url( $image['image']['sizes']['medium'] ) . '" />';
+              $out .= '<div class="item-image"><img src="' . esc_url( $image['image']['url'] ) . '" />';
               if($iLength > 1) {
                 $out .= '<span class="item-counter document-counter">'.$i.'/'.$iLength.'</span>';
               }
