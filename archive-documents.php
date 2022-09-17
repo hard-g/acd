@@ -2,9 +2,9 @@
 <?php
 	$allSubjectTerms = get_terms(array('taxonomy' => 'subjects'));
 
-	$params = $_SERVER['QUERY_STRING'];
-	parse_str($params, $filters);
+	$params = preg_replace("/=[^a-zA-Z0-9s_-]/", "", $_SERVER['QUERY_STRING']);
 
+	parse_str($params, $filters);
 	$filters = array_merge(
 		[
 			'subject' => null,
@@ -63,13 +63,13 @@
 		// pre set filters here
 		if($filters['type']) {
 			foreach (explode('-',$filters['type']) as $t) {
-				$html .= '<span class="filter-item" data-rel="'.$t.'"><span class="filter-box-text">'.ucwords(str_replace('_', ' ', $t)).'<i class="close"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g fill="none" fill-rule="evenodd" stroke="#62060A" stroke-linecap="square"><path d="M7.973 21.027L21.627 7.373M21.929 21.213L7.906 7.19"/></g></svg></i></span></span>';
+				$html .= '<span class="filter-item" data-rel="'.$t.'"><span class="filter-box-text">'.ucwords(str_replace('_', ' ', $t)).'</span><i class="close"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g fill="none" fill-rule="evenodd" stroke="#62060A" stroke-linecap="square"><path d="M7.973 21.027L21.627 7.373M21.929 21.213L7.906 7.19"/></g></svg></i></span>';
 			}
 		}
 		if($filters['subject']) {
 			foreach (explode('_', $filters['subject']) as $s) {
 				$san = str_replace('-', ' ', $s);
-				$html .= '<span class="filter-item" data-rel="'.$s.'"><span class="filter-box-text">'.str_replace('_', ' ', ucwords($san)).'<i class="close"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g fill="none" fill-rule="evenodd" stroke="#62060A" stroke-linecap="square"><path d="M7.973 21.027L21.627 7.373M21.929 21.213L7.906 7.19"/></g></svg></i></span></span>';
+				$html .= '<span class="filter-item" data-rel="'.$s.'"><span class="filter-box-text">'.str_replace('_', ' ', ucwords($san)).'</span><i class="close"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><g fill="none" fill-rule="evenodd" stroke="#62060A" stroke-linecap="square"><path d="M7.973 21.027L21.627 7.373M21.929 21.213L7.906 7.19"/></g></svg></i></span>';
 			}
 		}
 		$html .= '</div></div>';
