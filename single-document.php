@@ -45,7 +45,7 @@
 			// print_r($types);
 			// print_r($tags);
 
-
+			$document_archive_url = home_url( 'documents' );
 
 			// print_r($postContent);
 			$i = 0;
@@ -119,7 +119,8 @@
 							$html .= '<span class="subhead">RELATED SUBJECTS</span>';
 							$html .= '<div class="inner"><div class="inner-padding">';
 							foreach($subjects as $subject) {
-								$html .= '<a class="button-text related-item" href="'. get_site_url() .'/index.php/documents/?subject='.$subject->slug.'">'.$subject->name.'</a>';
+								$archive_url = add_query_arg( 'subject', $subject->slug, $document_archive_url );
+								$html .= '<a class="button-text related-item" href="' . esc_url( $archive_url ) . '">' . esc_html( $subject->name ) . '</a>';
 							}
 						}
 						// if(count($tags) > 0) {
@@ -129,7 +130,8 @@
 						// 	}
 						// }
 						$html .= '<span class="subhead rel">TYPE</span>';
-						$html .= '<a class="button-text related-item" href="'. get_site_url() .'/index.php/documents/?type='.$type.'">'.strtoupper(str_replace('_', ' ', $type)).'</a>';
+
+						$html .= '<a class="button-text related-item" href="'. esc_url( add_query_arg( 'type', $type, $document_archive_url ) ) . '">' . esc_html( strtoupper( str_replace( '_', ' ', $type ) ) ) .'</a>';
 
 						$html .= '</div></div>';
 					$html .= '</div>';
