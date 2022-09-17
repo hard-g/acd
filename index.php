@@ -89,11 +89,11 @@
     $out .= '</div>';
 
 
-    $out .= '<section class="pagination-wrapper grid grid-2">';
+    $out .= '<section class="pagination-wrapper grid grid-3">';
 	// if previous
 	$out .= '<div class="grid-item">';
 		$prevPostContent = get_fields(66);
-		$out .= '<a class="flexer" href="'.get_site_url().'/index.php/essays">';
+		$out .= '<a class="flexer" href="' . esc_url( home_url( 'essays' ) ) . '">';
 		$out .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$prevPostContent['thumbnail_image'].'" />';
 		$out .= '<span class="item-title">Continue to Essays</span>';
 		$out .= '</div>';
@@ -101,9 +101,18 @@
 	// end prev
 	$out .= '<div class="grid-item">';
 		$nextPostContent = get_fields(71);
-		$out .= '<a class="flexer" href="'.get_site_url().'/index.php/documents">';
+		$out .= '<a class="flexer" href="' . esc_url( home_url( 'documents' ) ) . '">';
 		$out .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$nextPostContent['thumbnail_image'].'" />';
 		$out .= '<span class="item-title">Explore the Documents</span>';
+		$out .= '</div>';
+	$out .= '</div>';
+
+	//cringe
+	$out .= '<div class="grid-item">';
+		$morePostContent = get_fields(1137);
+		$out .= '<a class="flexer" href="' . esc_url( get_permalink( 1137 ) ) . '">';
+		$out .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$morePostContent['thumbnail_image'].'" />';
+		$out .= '<span class="item-title">A Deep Dive into Documents about Power</span>';
 		$out .= '</div>';
 	$out .= '</div>';
 	// if next
