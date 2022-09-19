@@ -8,6 +8,62 @@
 //   return $output;
 // }
 
+// disable for posts
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
+// disable for post types
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+shortcode_ui_register_for_shortcode(
+  'document',
+  array(
+    'label' => 'Add Document',
+    'attrs'          => array(
+      array(
+        'label'        => 'Document',
+        'attr'         => 'id',
+        'type'         => 'post_select',
+        'query'        => array('person', 'places', 'events', 'organizations', 'letter', 'text', 'still_image' )
+      )
+    )
+  )
+);
+
+
+shortcode_ui_register_for_shortcode(
+  'footnote',
+  array(
+    'label' => 'Add Footnote',
+    'attrs'          => array(
+      array(
+        'label'        => 'Text',
+        'attr'         => 'text',
+        'type'         => 'textarea'
+      )
+    )
+  )
+);
+
+shortcode_ui_register_for_shortcode(
+  'attribution',
+  array(
+    'label' => 'Add Attribution',
+    'attrs'          => array(
+      array(
+        'label'        => 'Name',
+        'attr'         => 'name',
+        'type'         => 'text'
+      ),
+      array(
+        'label'        => 'Text',
+        'attr'         => 'text',
+        'type'         => 'textarea'
+      )
+    )
+  )
+);
+
+
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
 function special_nav_class ($classes, $item) {
@@ -61,8 +117,28 @@ function enable_more_buttons($buttons) {
 add_filter("mce_buttons", "enable_more_buttons");
 
 // remove_filter( 'the_content', 'wpautop' );
+add_shortcode('footnote', 'footnote_shortcode_query');
+function footnote_shortcode_query($atts, $content){
+  extract(shortcode_atts(array(
+   'text' => '')
+   , $atts));
 
+  $what = '<span class="footnote">'.$text.'</span>';
 
+  return $what;
+}
+
+add_shortcode('attribution', 'attr_shortcode_query');
+function attr_shortcode_query($atts, $content){
+  extract(shortcode_atts(array(
+   'text' => '',
+   'name' => '')
+   , $atts));
+
+  $what = '<p><span class="attr"> &mdash; <em>'.$name.'</em><br /><span class="attr-quote">'.$text.'</span></span></p>';
+
+  return $what;
+}
 
 add_shortcode('document', 'document_shortcode_query');
 function document_shortcode_query($atts, $content){
