@@ -30,28 +30,30 @@
 		}
 			// $html .= '<section class="wrapper essay-content">'.do_shortcode(get_the_content()).'</section>';
 			$html .= '<section class="wrapper essay-content">'.apply_filters('the_content', get_the_content());
-			foreach($postContent['essay_index_section'] as $weirdessaysection) {
-				$html .='<hr style="width: 240px; margin: 0 auto;" />';
-				$html .='<p class="lower-essay-header"> '. $weirdessaysection['index_title'] . '</p><div class="creditss">
-<div class="column column__count">';
-				foreach($weirdessaysection['essay_index'] as $essayindexer ) {
-					$html .='<div class="index-entery"><p class="uni">' . $essayindexer['publication'] .'</p>';
-					$html .='<p class="link"><a href=" '. $essayindexer['title_link'] .'" target="_blank" rel="noopener">' . $essayindexer['title'] .'</a></p>';
-					$html .='<p class="index-body">'. $essayindexer['description'] .'</p>';
-					if ( $essayindexer['date'] == true ){
-					$html .='<div class="date-wrap">
-<p class="date-title">Date</p>
-<p class="date-int">'.  $essayindexer['date'].'</p>
-</div>';};
-					if ( $essayindexer['author'] == true ){
-					$html .='<div class="date-wrap">
-<p class="date-title">Authors</p>
-<p class="date-int">'. $essayindexer['author'] .'</p>
-</div>';};
-				$html .='</div>';
+			if ( ! empty( $postContent['essay_index_section'] ) ) {
+				foreach($postContent['essay_index_section'] as $weirdessaysection) {
+					$html .='<hr style="width: 240px; margin: 0 auto;" />';
+					$html .='<p class="lower-essay-header"> '. $weirdessaysection['index_title'] . '</p><div class="creditss">
+	<div class="column column__count">';
+					foreach($weirdessaysection['essay_index'] as $essayindexer ) {
+						$html .='<div class="index-entery"><p class="uni">' . $essayindexer['publication'] .'</p>';
+						$html .='<p class="link"><a href=" '. $essayindexer['title_link'] .'" target="_blank" rel="noopener">' . $essayindexer['title'] .'</a></p>';
+						$html .='<p class="index-body">'. $essayindexer['description'] .'</p>';
+						if ( $essayindexer['date'] == true ){
+						$html .='<div class="date-wrap">
+	<p class="date-title">Date</p>
+	<p class="date-int">'.  $essayindexer['date'].'</p>
+	</div>';};
+						if ( $essayindexer['author'] == true ){
+						$html .='<div class="date-wrap">
+	<p class="date-title">Authors</p>
+	<p class="date-int">'. $essayindexer['author'] .'</p>
+	</div>';};
+					$html .='</div>';
+					};
+					 $html .='</div></div>';
 				};
-				 $html .='</div></div>';
-			};
+			}
 			$html .='</section>';
 
 			$next_post = get_adjacent_post(null, null, false);
@@ -95,7 +97,6 @@
 				$html .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$morePostContent['thumbnail_image'].'" />';
 				$html .= '<span class="item-title">A Deep Dive into Documents about Power</span>';
 				$html .= '</div>';
-			}
 			}
 			$html .= '</div>';
 			// if next
