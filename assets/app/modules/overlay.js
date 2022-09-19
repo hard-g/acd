@@ -11,7 +11,7 @@ var Overlay = (function($, _) {
            overlay: $('.document-preview-overlay', $el),
            close: $('.close', $el)
         };
-      
+
         this.states = {
             active : 'active'
         };
