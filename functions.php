@@ -88,8 +88,12 @@ function document_shortcode_query($atts, $content){
 			$document = get_fields($id);
         // $out = 'found a post';
                 // <h4><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h4>
+
+			$thumb_url = ! empty( $document['images'][0]['image'] ) ? $document['images'][0]['image']['sizes']['large'] : '';
+			$image_url = ! empty( $document['images'][0]['image'] ) ? $document['images'][0]['image']['url'] : '';
+
             $out = '<div class="document-preview">';
-            $out .= '<a class="js-trigger" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src=' . esc_url( $document['images'][0]['image']['sizes']['medium'] ) . ' />';
+            $out .= '<a class="js-trigger" href="javascript:void(0);" title="' . get_the_title($id) . '"><img src=' . esc_url( $thumb_url ) . ' data-original-image="' . esc_url( $image_url ) . '" />';
             $out .= '<div class="image-caption-title">'. get_the_title($id) .'</div>';
             $out .= '<div class="image-caption-ctr">'. $document['caption'] .'</div>';
             $out .= '</a>';
@@ -106,14 +110,17 @@ function document_shortcode_query($atts, $content){
             $out .= '<div class="image">';
             foreach($document['images'] as $image) {
               $i++;
-              $out .= '<div class="item-image"><img src="' . esc_url( $image['image']['url'] ) . '" />';
+
+			  $thumb_url = ! empty( $image['image']['sizes']['large'] ) ? $image['image']['sizes']['large'] : '';
+			  $image_url = ! empty( $image['image']['url'] ) ? $image['image']['url'] : '';
+
+              $out .= '<div class="item-image"><img src="' . esc_url( $thumb_url ) . '" data-original-image="' . esc_url( $image_url ) . '" />';
               if($iLength > 1) {
                 $out .= '<span class="item-counter document-counter">'.$i.'/'.$iLength.'</span>';
               }
               $out .= '</div>';
             }
             $out .= '</div>';
-            // $out .= '<div class="image"><img class="item-image" src="'. $document['images'][0]['image'] .'" /></div>';
             $out .= '</section>';
             $out .= '</div>';
 
