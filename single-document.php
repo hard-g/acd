@@ -53,7 +53,12 @@
 			$html .= '<section class="document-box">';
 			foreach($postContent['images'] as $image) {
 				$i++;
-				$html .= '<div class="document-image"><a class="js-trigger" href="' . esc_url( $image['image']['url'] ) .'" target="_blank"><img src="' . esc_url( $image['image']['url'] ) . '" /></a>';
+				$html .= sprintf(
+					'<div class="document-image"><a class="js-trigger" href="%s" target="_blank"><img src="%s" data-original-image="%s" /></a></div>',
+					esc_url( $image['image']['url'] ),
+					esc_url( $image['image']['sizes']['large'] ),
+					esc_url( $image['image']['url'] )
+				);
 				if($iLength > 1) {
 					$html .= '<span class="document-counter-grey">'.$i.'/'.$iLength.'</span>';
 				}
