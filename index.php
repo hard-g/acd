@@ -92,7 +92,7 @@
     $out .= '<section class="pagination-wrapper grid grid-3">';
 	// if previous
 	$out .= '<div class="grid-item">';
-		$prevPostContent = get_fields(66);
+		$prevPostContent = get_fields(70);
 		$out .= '<a class="flexer" href="' . esc_url( home_url( 'essays' ) ) . '">';
 		$out .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$prevPostContent['thumbnail_image'].'" />';
 		$out .= '<span class="item-title">Continue to Essays</span>';
@@ -100,7 +100,7 @@
 	$out .= '</div>';
 	// end prev
 	$out .= '<div class="grid-item">';
-		$nextPostContent = get_fields(71);
+		$nextPostContent = get_fields(66);
 		$out .= '<a class="flexer" href="' . esc_url( home_url( 'documents' ) ) . '">';
 		$out .= '<div class="inner"><img style="width: 100%; height: auto;" src="'.$nextPostContent['thumbnail_image'].'" />';
 		$out .= '<span class="item-title">Explore the Documents</span>';
