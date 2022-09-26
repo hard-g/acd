@@ -468,6 +468,57 @@ p {
     line-height: 1.18
 }
 
+  /* === ALUX about page Edits 8/11/18 ===*/
+  .about-essay-header{
+    margin-top: 60px;
+    font-family: GrotexBETA;
+    font-size: 19px;
+    line-height: 1.26;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin: 0px auto 40px;
+    text-align: center;
+    max-width: 65%;
+    color: #62060a;
+    margin-top: 80px;
+  }
+  .credits{column-count: 2;margin-bottom: 200px;column-gap:66px;}
+  .column .about-title{
+    display: block;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.37;
+    font-family: 'SelfModern-Italic';
+  }
+  .column .about-subhead{
+    display: block;
+    margin-bottom: -6px;
+    margin-top: -7px;
+    font-family: GrotexBETA;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #62060a;
+  }
+  .column .image-caption-title{
+        display: block;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: -12px;
+  }
+  .column .image-caption{
+      display: block;
+    margin-bottom: -6px;
+  }
+    .column .image-caption a{font-size: 1.4rem;}
+   .column em{font-style: normal;
+    font-family: 'SelfModern-Italic';}
+@media screen and (max-width:768px){.credits{column-count: 1!important;margin-bottom:0px !important;}}
+
+
 /* === ALUX Esssay page edits - 8/11/18 === */
 .creditss{
   display: flex;

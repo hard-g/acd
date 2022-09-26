@@ -78,7 +78,9 @@ nav.main a.no-style {
 
 
 .page-template-page-about  {
-
+	.header-page-title {
+		display: none;
+	}
 	.page-header-wrapper {
 		@include phone() {
 			margin-bottom: 60px;
