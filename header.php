@@ -58,7 +58,7 @@
 					  		$singleLink = home_url( 'essays' );
 					  	}
 
-					     ?> <div class="header-page-title"> <a class="no-style" href="<?php echo get_bloginfo('url'); ?><?php echo $singleLink; ?>"><?php echo $title; ?> </div></a><?php
+					     ?> <div class="header-page-title"> <a class="no-style" href="<?php echo esc_url( $singleLink ); ?>"><?php echo esc_html( $title ); ?> </div></a><?php
 					   } else if (is_search()) {?>
 					   <div class="header-page-title">Search</div>
 					   <?php } else { ?>
