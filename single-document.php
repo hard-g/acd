@@ -54,7 +54,7 @@
 			foreach($postContent['images'] as $image) {
 				$i++;
 				$html .= sprintf(
-					'<div class="document-image"><a class="js-trigger" href="%s" target="_blank"><img src="%s" data-original-image="%s" /></a></div>',
+					'<div class="document-image"><a class="js-trigger" href="%s" target="_blank"><img src="%s" data-original-image="%s" /></a>',
 					esc_url( $image['image']['url'] ),
 					esc_url( $image['image']['sizes']['large'] ),
 					esc_url( $image['image']['url'] )
