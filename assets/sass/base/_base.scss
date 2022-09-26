@@ -484,13 +484,13 @@ p {
 .creditss div.column:nth-of-type(2){margin-left:33px;}
 p.lower-essay-header{
   font-family: SelfModern;
-  font-size: 30px;
-  line-height: 1.2;
-  letter-spacing: 1px;
+  font-size: 30px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 1px !important;
   text-align: center;
   color: #62060a;
      max-width: 77%;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 60px auto !important;
 }
 .column__count{
   column-count: 2;
