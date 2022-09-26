@@ -294,3 +294,10 @@ body.single-essay.no-scroll nav.main{
 .home .grid-item:hover .item-title {
     color: $coral;
 }
+
+
+.menu-main-nav-container .no-number a{cursor: default;}
+.menu-main-nav-container .no-number a:hover{color: #ffffff;}
+.menu-main-nav-container .no-number .sub-menu{list-style: none;padding-left: 8px;}
+.menu-main-nav-container .no-number .sub-menu a{cursor: pointer;}
+.menu-main-nav-container .no-number .sub-menu a:hover{color:rgba(255, 88, 63, 0.9);}
