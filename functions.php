@@ -324,4 +324,28 @@ foreach($types as $type) {
 }
 
   add_action( 'pre_get_posts', 'sortable_faq_post_columns');
-?>
+
+add_action(
+	'enqueue_block_assets',
+	function() {
+		$blocks_dir        = get_stylesheet_directory() . '/build/';
+		$blocks_asset_file = include $blocks_dir . 'index.asset.php';
+
+		// Replace "wp-blockEditor" with "wp-block-editor".
+		$blocks_asset_file['dependencies'] = array_replace(
+			$blocks_asset_file['dependencies'],
+			array_fill_keys(
+				array_keys( $blocks_asset_file['dependencies'], 'wp-blockEditor', true ),
+				'wp-block-editor'
+			)
+		);
+
+		wp_enqueue_script(
+			'ramp-blocks',
+			get_stylesheet_directory_uri() . '/build/index.js',
+			$blocks_asset_file['dependencies'],
+			$blocks_asset_file['version'],
+			true
+		);
+	}
+);
