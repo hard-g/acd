@@ -23,26 +23,6 @@ shortcode_ui_register_for_shortcode(
   )
 );
 
-shortcode_ui_register_for_shortcode(
-  'attribution',
-  array(
-    'label' => 'Add Attribution',
-    'attrs'          => array(
-      array(
-        'label'        => 'Name',
-        'attr'         => 'name',
-        'type'         => 'text'
-      ),
-      array(
-        'label'        => 'Text',
-        'attr'         => 'text',
-        'type'         => 'textarea'
-      )
-    )
-  )
-);
-
-
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
 function special_nav_class ($classes, $item) {

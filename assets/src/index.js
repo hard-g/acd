@@ -1,4 +1,4 @@
-//import './blocks/footnote'
+import './blocks/attribution'
 
 import './footnote'
 

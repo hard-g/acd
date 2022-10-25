@@ -1,0 +1,23 @@
+{
+	"apiVersion": 2,
+	"name": "acd/attribution",
+	"title": "Attribution",
+	"category": "acd",
+	"supports": {
+		"anchor": true
+	},
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"attributes": {
+		"name": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}
