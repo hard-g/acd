@@ -23,21 +23,6 @@ shortcode_ui_register_for_shortcode(
   )
 );
 
-
-shortcode_ui_register_for_shortcode(
-  'footnote',
-  array(
-    'label' => 'Add Footnote',
-    'attrs'          => array(
-      array(
-        'label'        => 'Text',
-        'attr'         => 'text',
-        'type'         => 'textarea'
-      )
-    )
-  )
-);
-
 shortcode_ui_register_for_shortcode(
   'attribution',
   array(
@@ -341,11 +326,18 @@ add_action(
 		);
 
 		wp_enqueue_script(
-			'ramp-blocks',
+			'acd-block-editor',
 			get_stylesheet_directory_uri() . '/build/index.js',
 			$blocks_asset_file['dependencies'],
 			$blocks_asset_file['version'],
 			true
+		);
+
+		wp_enqueue_style(
+			'acd-block-editor-styles',
+			get_stylesheet_directory_uri() . '/build/index.css',
+			[],
+			$blocks_asset_file['version']
 		);
 	}
 );

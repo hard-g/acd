@@ -23,9 +23,6 @@ var Footnote = (function($, _) {
 						var $prev;
 
             this.$els.each(function(i) {
-                if(!$(this).parent().hasClass('essay-content')) {
-                    $(this).unwrap();
-                }
                 $prev = $(this).prev();
                 if($('span.attr', $prev).length) {
                     $(this).appendTo($('span.attr span', $prev));

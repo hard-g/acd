@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "GrotexBETA";
+  src: url("../sass/fonts/GrotexBETA-Regular.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SelfModern";
+  src: url("../sass/fonts/Self_Modern-Regular_web.eot");
+  src: url("../sass/fonts/Self_Modern-Regular_web.eot?#iefix") format("embedded-opentype"), url("../sass/fonts/Self_Modern-Regular_web.woff2") format("woff2"), url("../sass/fonts/Self_Modern-Regular_web.woff") format("woff"), url("../sass/fonts/Self_Modern-Regular_web.ttf") format("truetype"), url("../sass/fonts/Self_Modern-Regular_web.svg#Self_Modern-Regular_web") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SelfModern-TextBeta";
+  src: url("../sass/fonts/Self_Modern-Text_Beta_web.eot");
+  src: url("../sass/fonts/Self_Modern-Text_Beta_web.eot?#iefix") format("embedded-opentype"), url("../sass/fonts/Self_Modern-Text_Beta_web.woff2") format("woff2"), url("../sass/fonts/Self_Modern-Text_Beta_web.woff") format("woff"), url("../sass/fonts/Self_Modern-Text_Beta_web.ttf") format("truetype"), url("../sass/fonts/Self_Modern-Text_Beta_web.svg#Self_Modern-Text_Beta_web") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SelfModern-Italic";
+  src: url("../sass/fonts/Self_Modern-Italic_web.eot");
+  src: url("../sass/fonts/Self_Modern-Italic_web.eot?#iefix") format("embedded-opentype"), url("../sass/fonts/Self_Modern-Italic_web.woff2") format("woff2"), url("../sass/fonts/Self_Modern-Italic_web.woff") format("woff"), url("../sass/fonts/Self_Modern-Italic_web.ttf") format("truetype"), url("../sass/fonts/Self_Modern-Italic_web.svg#Self_Modern-Italic_web") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RumoriS-Chiari";
+  src: url("../sass/fonts/RumoriS-Chiari.eot");
+  src: url("../sass/fonts/RumoriS-Chiari.eot?#iefix") format("embedded-opentype"), url("../sass/fonts/RumoriS-Chiari.woff2") format("woff2"), url("../sass/fonts/RumoriS-Chiari.woff") format("woff"), url("../sass/fonts/RumoriS-Chiari.ttf") format("truetype"), url("../sass/fonts/RumoriS-Chiari.svg#RumoriS-Chiari") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+.editor-styles-wrapper {
+	color: #62060a;
+
+	h3, h4.ital, p {
+	  font-family: "SelfModern";
+	}
+
+	p {
+		font-size: 1.3rem;
+		line-height: 1.29;
+		margin-bottom: 20px;
+	}
+	em {
+	  font-family: "SelfModern-Italic";
+	}
+}
