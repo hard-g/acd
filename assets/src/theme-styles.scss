@@ -48,4 +48,31 @@
 	em {
 	  font-family: "SelfModern-Italic";
 	}
+
+	.essay-header {
+	  display: block;
+	  margin: 0px auto 40px;
+	  text-align: center;
+	  max-width: 65%;
+	  font-family: SelfModern;
+	  font-size: 2rem;
+	  line-height: 1.2;
+	  letter-spacing: 1px;
+	  text-align: center;
+	  color: #62060a;
+	  font-weight: 400;
+
+		&:before {
+			content: " ";
+			display: block;
+			height: 2px;
+			background-image: linear-gradient(to right, #9a8177 33%, #ffffff 0%);
+			position: relative;
+			width: 240px;
+			margin: 40px auto;
+			background-position: bottom;
+			background-size: 10px 2px;
+			background-repeat: repeat-x;
+		}
+	}
 }
