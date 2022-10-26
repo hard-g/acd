@@ -1,9 +1,12 @@
 .attr {
 	font-family: SelfModern-Italic;
-	font-style: italic;
 
 	.attr-name:before {
 		content: "\2014";
 		padding-right: 3px;
+	}
+
+	.attr-quote {
+		font-family: SelfModern;
 	}
 }

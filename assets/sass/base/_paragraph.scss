@@ -53,15 +53,14 @@ p strong {
 }
 p em {
 	font-family: SelfModern-Italic;
+	font-style: normal;
 }
 .attr {
 	top: -5px;
     position: relative;
     left: 40px;
     font-size: 1.9rem;
-    span, em {
-    	font-size: 1.9rem;
-    }
+	font-style: normal;
     display: inline-block;
     margin-bottom: 30px;
     span {
