@@ -168,12 +168,12 @@
 		    text-indent: -10px;
 		}
 	}
-	.item-title, .subhead, .pull-quote, .quote {
+	.item-title, .subhead, .pull-quote, .wp-block-quote {
 		display: block;
 		margin: 40px auto;
 		text-align: center;
 	}
-	.quote {
+	.wp-block-quote {
 		text-align: left;
 		margin: auto;
 		width: calc(100% - 80px);
