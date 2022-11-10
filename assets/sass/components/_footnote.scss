@@ -15,6 +15,10 @@
 			width: 100%;
 		}
 	}
+
+	a {
+		font-size: inherit !important;
+	}
 }
 .footnote-trigger {
 	cursor: pointer;
