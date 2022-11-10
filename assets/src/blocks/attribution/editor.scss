@@ -1,9 +1,18 @@
 .attr {
 	font-family: SelfModern-Italic;
 
-	.attr-name:before {
-		content: "\2014";
-		padding-right: 3px;
+	padding-left: 20px;
+	width: calc(100% - 80px);
+
+	.attr-name {
+		margin-left: -20px;
+
+		&:before {
+			content: "\2014";
+			display: inline-block;
+			padding-right: 3px;
+			width: 20px;
+		}
 	}
 
 	.attr-quote {
