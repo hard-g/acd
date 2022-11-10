@@ -168,10 +168,14 @@ em {
 .wp-block-quote {
   font-family: SelfModern-Italic;
   font-size: 1.9rem;
-  font-style: italic;
   line-height: 1.37;
   text-align: left;
   color: #62060a;
+
+  p {
+    font-family: SelfModern-Italic;
+    font-size: inherit !important;
+  }
 }
 
 .subhead-italic {
