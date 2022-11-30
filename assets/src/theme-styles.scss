@@ -49,6 +49,10 @@
 	  font-family: "SelfModern-Italic";
 	}
 
+	.wp-block-quote__citation {
+		display: none !important;
+	}
+
 	.essay-header {
 	  display: block;
 	  margin: 0px auto 40px;
